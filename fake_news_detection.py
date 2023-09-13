@@ -15,7 +15,9 @@ with open('nb_model.pkl', 'rb') as nb_file:
 # Load the vectorizer from a pickle file
 with open('vectorization.pkl', 'rb') as vectorization_file:
     vectorization = pickle.load(vectorization_file)
-
+# Check if the vectorized_input_data is a sparse matrix
+if not scipy.sparse.issparse(vectorized_input_data):
+    vectorized_input_data = scipy.sparse.csr_matrix(vectorized_input_data)
 # Create a Streamlit web app
 st.title('Fake News Detection App')
 
