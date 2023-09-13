@@ -35,10 +35,15 @@ if st.button('Detect Fake News'):
     prediction_dt = DT.predict(vectorized_input_data)
     prediction_nb = nb.predict(vectorized_input_data)
     # Display the predictions
-    if prediction_lr == 0:
+    threshold = 0.5
+    if prediction_lr < threshold:
         st.write("Logistic Regression: The News is FAKE")
     else:
         st.write("Logistic Regression: The News is REAL")
+    # if prediction_lr == 0:
+        # st.write("Logistic Regression: The News is FAKE")
+    # else:
+        # st.write("Logistic Regression: The News is REAL")
     
     if prediction_dt == 0:
         st.write("Decision Tree Classifier: The News is FAKE")
