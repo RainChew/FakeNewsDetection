@@ -28,7 +28,6 @@ if st.button('Detect Fake News'):
     input_data = [news_text]
     vectorized_input_data = vectorization.transform(input_data)
     
-
     prediction_lr = LR.predict(vectorized_input_data)
     prediction_dt = DT.predict(vectorized_input_data)
     prediction_nb = nb.predict(vectorized_input_data)
