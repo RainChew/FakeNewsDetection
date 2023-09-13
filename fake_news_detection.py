@@ -27,7 +27,8 @@ if st.button('Detect Fake News'):
     # Perform predictions using your models
     input_data = [news_text]
     vectorized_input_data = vectorization.transform(input_data)
-    
+    assert vectorized_input_data.shape[1] == LR.shape[1]
+
     prediction_lr = LR.predict(vectorized_input_data)
     prediction_dt = DT.predict(vectorized_input_data)
     prediction_nb = nb.predict(vectorized_input_data)
@@ -47,3 +48,5 @@ if st.button('Detect Fake News'):
         st.write("Naive Bayes: The News is FAKE")
     else:
         st.write("Naive Bayes: The News is REAL")
+    except Exception as e:
+        st.error(f"Error: {str(e)}")
