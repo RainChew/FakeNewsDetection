@@ -28,17 +28,14 @@ if st.button('Detect Fake News'):
     input_data = [news_text]
     vectorized_input_data = vectorization.transform(input_data)
     
-    try:
-        prediction_lr = LR.predict(vectorized_input_data)
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
+    prediction_lr = LR.predict(vectorized_input_data)
     prediction_dt = DT.predict(vectorized_input_data)
     prediction_nb = nb.predict(vectorized_input_data)
     # Display the predictions
-    if prediction_lr == 0:
-        st.write("Logistic Regression: The News is FAKE")
-    else:
-        st.write("Logistic Regression: The News is REAL")
+    # if prediction_lr == 0:
+    #     st.write("Logistic Regression: The News is FAKE")
+    # else:
+    #     st.write("Logistic Regression: The News is REAL")
     
     if prediction_dt == 0:
         st.write("Decision Tree Classifier: The News is FAKE")
