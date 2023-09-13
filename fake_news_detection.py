@@ -48,5 +48,4 @@ if st.button('Detect Fake News'):
         st.write("Naive Bayes: The News is FAKE")
     else:
         st.write("Naive Bayes: The News is REAL")
-    except Exception as e:
-        st.error(f"Error: {str(e)}")
+
