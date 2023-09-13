@@ -34,7 +34,6 @@ if st.button('Detect Fake News'):
         print(f"An error occurred: {str(e)}")
     prediction_dt = DT.predict(vectorized_input_data)
     prediction_nb = nb.predict(vectorized_input_data)
-    print(prediction_lr)
     # Display the predictions
     if prediction_lr == 0:
         st.write("Logistic Regression: The News is FAKE")
