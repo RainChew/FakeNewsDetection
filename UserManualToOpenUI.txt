@@ -1,0 +1,12 @@
+Requirements:
+Anaconda
+https://www.anaconda.com/download
+
+Anaconda prompt
+"pip install streamlit"
+"cd RDS2S1G3-ChewLipSinHoWeiYougLimYiLeong" //Go to the folder
+"streamlit run fake_news_detection.py"
+You may access the localhost
+IF cannot:
+Copy the http://localhost:8501 to your browser and paste into the url and then run the deploy model.
+Now you can test the model
